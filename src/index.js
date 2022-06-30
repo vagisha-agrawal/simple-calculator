@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import styles from './styles.module.css'
 
+const table_data = []
+
 export const Maths = ({ table }) => {
   const Operators = [
     {
@@ -70,22 +72,28 @@ export const Maths = ({ table }) => {
   }
 
   const handleClick = () => {
-    setTableData([
-      {
-        label: `${operand1} ${operator} ${operand2} = ${answer}`,
-        operand1: operand1,
-        operator: operator,
-        operand2: operand2,
-        answer: answer
-      },
-      ...tableData
-    ])
+    table_data.unshift({
+      label: `${operand1} ${operator} ${operand2} = ${answer}`,
+      operand1: operand1,
+      operator: operator,
+      operand2: operand2,
+      answer: answer
+    })
+    setOp1(0)
+    setOp2(0)
+    console.log('data: ', table_data)
+    localStorage.setItem('calc-data', JSON.stringify(table_data))
+    const data_table = JSON.parse(localStorage.getItem('calc-data'))
+    setTableData(data_table)
   }
 
   const handleDelete = (e, index) => {
-    let data = [...tableData]
-    data.splice(index, 1)
-    setTableData(data)
+    /* let data = [...tableData]
+    data.splice(index, 1) */
+    table_data.splice(index, 1)
+    localStorage.setItem('calc-data', JSON.stringify(table_data))
+    const data_table = JSON.parse(localStorage.getItem('calc-data'))
+    setTableData(data_table)
   }
 
   const handleUpdate = (e, index) => {
@@ -98,6 +106,7 @@ export const Maths = ({ table }) => {
 
   return (
     <div className='container-fluid'>
+      {console.log('test')}
       <h1>Functional Component</h1>
       <div className='row mt-5'>
         <div className='col-3'>

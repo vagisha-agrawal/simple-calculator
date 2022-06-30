@@ -5,7 +5,7 @@ import {Maths} from 'simple-calculator'
 import 'simple-calculator/dist/index.css'
 
 const App = () => {
-  return <Maths table={false}/>
+  return <Maths table/>
 }
 
 export default App
