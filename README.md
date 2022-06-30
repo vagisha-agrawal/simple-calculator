@@ -7,23 +7,30 @@
 ## Install
 
 ```bash
-npm install --save simple-calculator
+npm i @tangisha/simple-calculator
 ```
+
+## Important point
+Install bootstrap and import it in your root file so that its UI looks better
 
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
+import React from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-import MyComponent from 'simple-calculator'
+import {Maths} from 'simple-calculator'
 import 'simple-calculator/dist/index.css'
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
+const App = () => {
+  return <Maths table={false}/>
 }
 ```
+
+# Its Functionality
+There is a table will be formed everytime you calculate so you can use that expression in future. If you dont want that table, just pass ```jsx return <Maths table={false}/> ``` as a props.
+
+The table will be formed after clicking on "=" primary button which will render in the browser
 
 ## License
 
