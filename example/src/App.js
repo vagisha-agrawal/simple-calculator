@@ -1,10 +1,11 @@
 import React from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { ExampleComponent } from 'simple-calculator'
+import {Maths} from 'simple-calculator'
 import 'simple-calculator/dist/index.css'
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  return <Maths table={false}/>
 }
 
 export default App
