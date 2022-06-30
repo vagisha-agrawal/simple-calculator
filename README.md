@@ -28,7 +28,7 @@ const App = () => {
 ```
 
 # Its Functionality
-There is a table will be formed everytime you calculate so you can use that expression in future. If you dont want that table, just pass ```jsx return <Maths table={false}/> ``` as a props.
+There is a table will be formed everytime you calculate so you can use that expression in future. If you dont want that table, just pass ```return <Maths table={false}/>``` as a props.
 
 The table will be formed after clicking on "=" primary button which will render in the browser
 
